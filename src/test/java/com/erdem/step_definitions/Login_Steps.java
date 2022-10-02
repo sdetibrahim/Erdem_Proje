@@ -40,10 +40,12 @@ public class Login_Steps {
     public void the_user_clicking_if_results_are_matches() {
         double aradigimitem = Double.parseDouble(loginPage.birincielement.getText());
 
+        System.out.println(aradigimitem);
+
         long refreshCount = 90000000000000l;
 
         for (long i = 0; i < refreshCount; i++) {
-            if (aradigimitem>0 && aradigimitem<7.44) {
+            if (aradigimitem>0 && aradigimitem<0.70) {
 
                 BrowserUtils.clickWithJS(loginPage.quickbuy);
             } else {
