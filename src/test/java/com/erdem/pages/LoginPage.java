@@ -21,11 +21,14 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//*[contains(text(),'Fiyat: Ucuzdan Pahalıya')]")
     public WebElement ucuzdanpahaliya;
 
-    @FindBy(xpath = "(//div[@class='tw-flex tw-items-center tw-gap-1']/span[1])[1]")
+    @FindBy(xpath = "(//*[@class='tw-truncate'])[2]")
     public WebElement birincielement;
 
     @FindBy(xpath = "(//*[@class='tw-inline-flex tw-justify-center tw-items-center tw-rounded-md tw-text-white-1 PlainButton_btn__CRXH4 !tw-rounded-full tw-text-sm tw-drop-shadow tw-text-white-2 tw-w-[112px]           tw-opacity-0 hover:!tw-bg-pink-dark hover:tw-drop-shadow-md tw-transition-[background-color] tw-ease-in-out tw-duration-100 group-hover:tw-opacity-100 enforcement-trigger'])[1]")
     public WebElement quickbuy;
+
+    @FindBy(xpath = "//*[@class='tw-h-9 tw-w-9 tw-box-border tw-border tw-border-solid tw-border-gray-300         tw-flex tw-items-center tw-justify-center tw-rounded tw-cursor-pointer']")
+    public WebElement refresh;
 
     public LoginPage(){
         PageFactory.initElements(Driver.get(), this); }

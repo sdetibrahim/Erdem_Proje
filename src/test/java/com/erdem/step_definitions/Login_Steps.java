@@ -25,14 +25,14 @@ public class Login_Steps {
     public void the_user_is_on_the_login_page() throws InterruptedException {
         String url = ConfigurationReader.get("url");
         Driver.get().get(url);
-        BrowserUtils.waitFor(5);
+        BrowserUtils.waitFor(300);
     }
 
     @When("the user filtering")
     public void the_user_filtering() throws InterruptedException {
-
+        BrowserUtils.waitFor(40);
         loginPage.ucuzdan_pahaliya_sirala();
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(10);
 
     }
 
@@ -40,16 +40,14 @@ public class Login_Steps {
     public void the_user_clicking_if_results_are_matches() {
         double aradigimitem = Double.parseDouble(loginPage.birincielement.getText());
 
-        System.out.println(aradigimitem);
-
         long refreshCount = 90000000000000l;
 
         for (long i = 0; i < refreshCount; i++) {
-            if (aradigimitem>0 && aradigimitem<0.70) {
+            if (aradigimitem<0.31) {
 
                 BrowserUtils.clickWithJS(loginPage.quickbuy);
             } else {
-                driver.navigate().refresh();
+                loginPage.refresh.click();
                 BrowserUtils.waitFor(3);
             }
         }
