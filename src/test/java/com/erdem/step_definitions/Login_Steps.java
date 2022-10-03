@@ -45,12 +45,11 @@ public class Login_Steps {
         long refreshCount = 90000000000000l;
 
         for (long i = 0; i < refreshCount; i++) {
-            double aradigimitem = Double.parseDouble(loginPage.birincielement.getAttribute("value"));
+            double aradigimitem = Double.parseDouble(loginPage.birincielement.getText());
 
-            if (aradigimitem<0.0286) {
+            if (aradigimitem<0.0386) {
                 BrowserUtils.waitFor(4);
-                BrowserUtils.clickWithJS(loginPage.detail);
-                loginPage.refresh.click();
+               loginPage.detail.click();
             } else if(aradigimitem>0.0286){
                 loginPage.refresh.click();
                 BrowserUtils.waitFor(7);
