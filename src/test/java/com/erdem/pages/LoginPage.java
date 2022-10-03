@@ -30,6 +30,11 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//*[@class='tw-h-9 tw-w-9 tw-box-border tw-border tw-border-solid tw-border-gray-300         tw-flex tw-items-center tw-justify-center tw-rounded tw-cursor-pointer']")
     public WebElement refresh;
 
+    @FindBy(xpath = "(//*[@class='tw-text-sm tw-text-pink-primary tw-border tw-border-solid tw-shadow \\ tw-border-gray-500 hover:tw-bg-pink-primary hover:tw-border-pink-dark hover:tw-text-white-2 \\ tw-px-1.5 tw-py-0.5 tw-rounded tw-transition-[background-color,border-color,color] tw-ease-in-out tw-duration-100 tw-hidden xs:tw-block'])[1]")
+    public WebElement detail;
+
+
+
     public LoginPage(){
         PageFactory.initElements(Driver.get(), this); }
 
